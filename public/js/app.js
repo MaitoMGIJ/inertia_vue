@@ -32989,8 +32989,8 @@ var render = function() {
                 [
                   _c(
                     "table",
-                    _vm._l(_vm.notes, function(note, i) {
-                      return _c("tr", { key: i }, [
+                    _vm._l(_vm.notes, function(note) {
+                      return _c("tr", { key: note.id }, [
                         _c("td", { staticClass: "border px-4 py-2" }, [
                           _vm._v(
                             "\n                                    " +

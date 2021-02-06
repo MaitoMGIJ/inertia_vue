@@ -18,7 +18,7 @@
                     <div class="md:col-span-2 mt-5 md:mt-0">
                         <div class="shadow bg-gray-400 md:rounded-md p-4">
                             <table>
-                                <tr v-for="(note, i) in notes" :key="i">
+                                <tr v-for="note in notes" :key="note.id">
                                     <td class="border px-4 py-2">
                                         {{ note.excerpt }}
                                     </td>
