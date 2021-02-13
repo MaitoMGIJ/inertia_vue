@@ -23,10 +23,10 @@
                                         {{ note.excerpt }}
                                     </td>
                                      <td class="px-4 py-2">
-                                        <inertia-link :href="route('notes.show', note.id)">
+                                        <inertia-link :href="route('notes.show', note.id)" class="bg-green-600 rounded-md">
                                             Ver
                                         </inertia-link>
-                                        <inertia-link :href="route('notes.edit', note.id)">
+                                        <inertia-link :href="route('notes.edit', note.id)" class="bg-red-600 rounded-md">
                                             Editar
                                         </inertia-link>
                                     </td>
