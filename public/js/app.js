@@ -5353,6 +5353,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -5360,6 +5364,18 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: {
     notes: Array
+  },
+  data: function data() {
+    return {
+      q: ''
+    };
+  },
+  watch: {
+    q: function q(value) {
+      this.$inertia.replace(this.route('notes.index', {
+        q: value
+      }));
+    }
   }
 });
 
@@ -33761,18 +33777,49 @@ var render = function() {
                 { staticClass: "shadow bg-gray-400 md:rounded-md p-4" },
                 [
                   _c(
-                    "inertia-link",
-                    {
-                      staticClass:
-                        "bg-green-600 rounded-md text-white py-2 px-4 font-bold",
-                      attrs: { href: _vm.route("notes.create") }
-                    },
+                    "div",
+                    { staticClass: "flex justify-between" },
                     [
-                      _vm._v(
-                        "\n                            Crear\n                        "
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.q,
+                            expression: "q"
+                          }
+                        ],
+                        staticClass: "form-input rounded-md shadow-sm",
+                        attrs: { type: "text", placeholder: "Buscar..." },
+                        domProps: { value: _vm.q },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.q = $event.target.value
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "inertia-link",
+                        {
+                          staticClass:
+                            "bg-green-600 rounded-md text-white py-2 px-4 font-bold",
+                          attrs: { href: _vm.route("notes.create") }
+                        },
+                        [
+                          _vm._v(
+                            "\n                                Crear\n                            "
+                          )
+                        ]
                       )
-                    ]
+                    ],
+                    1
                   ),
+                  _vm._v(" "),
+                  _c("hr", { staticClass: "my-6" }),
                   _vm._v(" "),
                   _c(
                     "table",
@@ -33826,8 +33873,7 @@ var render = function() {
                     }),
                     0
                   )
-                ],
-                1
+                ]
               )
             ])
           ])
