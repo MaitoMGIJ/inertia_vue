@@ -17,6 +17,9 @@
                     </div>
                     <div class="md:col-span-2 mt-5 md:mt-0">
                         <div class="shadow bg-gray-400 md:rounded-md p-4">
+                            <inertia-link :href="route('notes.create')" class="bg-green-600 rounded-md text-white py-2 px-4 font-bold">
+                                Crear
+                            </inertia-link>
                             <table>
                                 <tr v-for="note in notes" :key="note.id">
                                     <td class="border px-4 py-2">
